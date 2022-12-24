@@ -126,26 +126,31 @@ p {
     text-decoration: none;
 }
 
-/*! BURGER LIST START */
-.burger_nav_box{
-    position: fixed;
-    display: none;
-    top: 86px;
-    background: linear-gradient(360deg, rgba(254, 252, 247, 0.504981) 0%, #FEFCF7 55.94%);
-}
-.shownav{
-    display: block;
-}
-.burgers_list{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+/*! BURGER BOX STYLE */
 
-.burgers_items{
-    margin-bottom: 42px;
+.box_mobile_nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top:90px;
+    width: 100%;
+    width: 375px;
+    padding-top: 40px;
+    padding-bottom: 577px;
+    transform: translateY(-150%);
+    background-image: linear-gradient(360deg, rgba(254, 252, 247, 0.504981) 0%, #FEFCF7 55.94%);;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.burgers_item{
+.list_mobile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.shownav {
+    transform: translateY(0%);
+}
+.mobile_link {
     font-weight: 900;
     font-size: 24px;
     line-height: 32px;
@@ -153,11 +158,22 @@ p {
     color: #333D4B;
     margin-bottom: 32px;
 }
+/*! BURGER BOX STYLE */
 
-.burgers_items:last-child{
-    margin-bottom: 377px;
+@media only screen and (max-width:640px){
+    .big_navbar{
+        display: none;
+    }
+    .burger_hero{
+        display: block;
+    }
+    
+    .header_image_logotip{
+        width: 163px;
+        height: 16px;
+    }
 }
-/* BURGER LIST END */
+
 
 /* ************ header part and *********** */
 
@@ -191,7 +207,6 @@ p {
 .coffe_great_desc {
     width: 100%;
     max-width: 445px;
-    height: 78px;
     font-family: 'Barlow';
     font-style: normal;
     font-weight: 400;
@@ -218,107 +233,77 @@ p {
     border-radius: 6px;
 }
 
-@media only screen and (max-width: 768px) {
-    .container {
-        width: 100%;
-        max-width: 768px;
-        margin: 0 auto;
-        padding: 0 39px;
+@media only screen and (max-width:660px){
+    .first_section{
+        
     }
-
-    .first_section {
-
-        margin-bottom: 150px;
+    .first_section_wrapper{
+        padding: 104px 0 104px 58px;
     }
-
-    .coffe_great {
+    .coffe_great{
         width: 100%;
         max-width: 329px;
+        height: fit-content;
         font-weight: 900;
         font-size: 48px;
         line-height: 48px;
         color: #FEFCF7;
         margin-bottom: 24px;
     }
-
-    .coffe_great_desc {
-        width: 100%;
+    .coffe_great_desc{
         max-width: 398px;
+        font-family: 'Barlow';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 25px;
+        color: #FEFCF7;
+        mix-blend-mode: normal;
+        opacity: 0.8;
+        margin-bottom: 40px;
     }
 
-    .first_section_btn {
-        padding: 15px 30px 16px 31px;
+    .first_section_btn{
         margin-bottom: 0;
     }
 }
+@media only screen and (max-width: 520px){
 
-@media only screen and (max-width: 631px) {
-    .header_part{
-        padding: 0;
-    }
-    .container{
-        width: 100%;
-        max-width: 631px;
-        padding:0 24px;
-    }
-    .header_wrapper{
+    .first_section_wrapper{
         display: flex;
         align-items: center;
-         justify-content: space-between;
-        padding: 34px 0 41px 0;
-    }
-   
-    .burger_hero{
-        display: block;
-    }
-    .navbar{
-        display: none;
-    }
-
-    .heder_logo_img{
-        width: 163px;
-        height: 17px;
-    }
-}
-
-@media only screen and (max-width: 375px) {
-    .first_section {
-        margin: 0;
-    }
-    .first_section_wrapper {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        padding:100px 24px 99px 24px;
+        padding: 99px 48px;
+        background-image: url(/image/intro-bg-mobile.jpg);
     }
     .coffe_great{
         width: 279px;
-        height: fit-content;
         font-weight: 900;
-        font-size: 39px;
+        font-size: 40px;
         line-height: 40px;
         color: #FEFCF7;
-        margin: 0;
         margin-bottom: 24px;
     }
     .coffe_great_desc{
-        width: 279px;
-        text-align: center;
+        max-width: 279px;
+        width: 100%;
+        font-family: 'Barlow';
+        font-style: normal;
         font-weight: 400;
         font-size: 15px;
         line-height: 25px;
         color: #FEFCF7;
         opacity: 0.8;
-        margin-bottom: 39px;
-    }
-    .first_section_btn{
-        font-weight: 900;
-        font-size: 18px;
-        line-height: 25px;
         text-align: center;
-        color: #FEFCF7;
+    }
+
+    .first_section_btn{
+
+        margin-bottom: 0;
     }
 }
+
+
 /* ********* first section start ****** */
 
 /* *********** second section start *************** */
@@ -728,6 +713,7 @@ p {
   }
   .works-section-content {
     display: flex;
+    flex-wrap: wrap;
   }
   .works-section-content-text:not(:first-child) {
     margin-left: 95px;
