@@ -1,10 +1,10 @@
-var elBurger = document.querySelector('.burger_hero');
-var elBurgerBox = document.querySelector('.box_mobile_nav');
+var elBurger = document.querySelector('.site_burger');
+var elBurgerBox = document.querySelector('.burgers_box');
 
 var icon= true;
 
 elBurger.addEventListener('click', function() {
-    elBurgerBox.classList.toggle('shownav');
+    elBurgerBox.classList.toggle("shownav");
 
     if(icon){
         elBurger.src = "../image/close.svg";
@@ -12,10 +12,9 @@ elBurger.addEventListener('click', function() {
     }
     
         else{
-            elBurger.src = "../image/Combined Shape 2 (1).svg";
+            elBurger.src = "../image/burger.svg";
             icon=true;
         }
 });
-
 
 
